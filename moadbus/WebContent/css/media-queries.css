@@ -1,0 +1,68 @@
+/************************************************************************************
+smaller than 980
+*************************************************************************************/
+@media screen and (max-width: 980px) {
+
+	/* pagewrap */
+	#pagewrap {
+		width: 95%;
+	}
+
+	/* content */
+	#content {
+		width: 70%;
+	}
+
+	/* sidebar */
+	#sidebar {
+		width: 30%;
+	}
+
+}
+
+/************************************************************************************
+smaller than 650
+*************************************************************************************/
+@media screen and (max-width: 650px) {
+
+	
+
+	/* content */
+	#content {
+		width: auto;
+		float: none;
+	}
+
+	/* sidebar */
+	#sidebar {
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+	
+	#sidebar:after {
+    content: "";
+    position: absolute;
+   top: 100%;
+   left: 48%;
+   border-top: 20px solid blue;
+   border-top-color: #002a59;
+   border-left: 20px solid transparent;
+   border-right: 20px solid transparent;
+}
+	
+}
+
+/************************************************************************************
+smaller than 560
+*************************************************************************************/
+@media screen and (max-width: 480px) {
+
+	/* disable webkit text size adjust (for iPhone) */
+	html {
+		-webkit-text-size-adjust: none;
+	}
+
+	
+}
+

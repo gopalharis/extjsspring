@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+				http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                                 ">
+    <bean id="bankApplicationsDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.BankApplicationsDao" />
+    </bean>
+    <bean id="dbUtils" class="com.moadbus.emconsole.utils.DBUtils">
+        <property name="applicationsDao" ref="bankApplicationsDao" />
+    </bean>
+    <bean id="bankAdminGroupUsersDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.BankAdminGroupUsersDao" />
+    </bean>
+     <bean id="admAuditDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.ADMAuditDao" />
+    </bean>
+    <bean id="bankApplicationPermissionsDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.BankApplicationPermissionsDao" />
+    </bean>
+    <bean id="bankAdminGroupApplicationPermissionsDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.BankAdminGroupApplicationPermissionsDao" />
+    </bean>
+    
+
+    <bean id="bankAdminGroupsDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.BankAdminGroupsDao" />
+    </bean>
+    <bean id="bankAdminGroupsApplicationsDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.BankAdminGroupsApplicationsDao" />
+    </bean>
+    
+    <bean id="menuDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.MenuDao" />
+    </bean>
+    
+    <bean id="bulkSmsGroupDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.BulkSmsGroupDao" />
+    </bean>
+    <bean id="smsMobileDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.SmsMobileDao" />
+    </bean>
+    <bean id="errorLogDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+        <property name="mapperInterface" value="com.moadbus.emconsole.dao.ErrorLogDao" />
+    </bean>
+</beans>

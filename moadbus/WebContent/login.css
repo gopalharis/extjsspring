@@ -1,0 +1,31 @@
+
+
+
+.login-left-blue
+{
+	background:url('mimages/login/leftcontentbg.png');	
+	padding:15px;
+}
+
+.l-top-white-text
+{
+	font-size:15px;
+	color:white;
+	
+}
+
+.l-arrow
+{
+	background:url('mimages/login/bodyarrow.png');
+	width: 21px !important;
+	height: 43px !important;
+	margin-left: 14px;
+	margin-top:-30px;
+	position: absolute;
+	
+}
+
+.login-right-bg
+{
+	background:url('mimages/login/pattern_bg_central_@2x.png');	
+}

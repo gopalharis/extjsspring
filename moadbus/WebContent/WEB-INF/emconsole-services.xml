@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+">
+
+	<bean id="authorizationUtils"
+	class="com.moadbus.emconsole.utils.AuthorizationUtils">
+		<property name="bankAdminGroupUsersDao" ref="bankAdminGroupUsersDao" />
+	</bean>
+	<bean id="actionLoggingService"
+	class="com.moadbus.emconsole.services.impl.ActionLoggingServiceImpl">
+		<property name="admAuditDao" ref="admAuditDao" />
+		<property name="authorizationUtils" ref="authorizationUtils" />
+		<property name="dbUtils" ref="dbUtils" />
+	</bean>
+	<bean id="menuService"
+	class="com.moadbus.emconsole.services.impl.MenuServiceImpl">
+		<property name="menuDao" ref="menuDao" />
+		<property name="bankAdminGroupsApplicationsDao" ref="bankAdminGroupsApplicationsDao" />
+		<property name="bankAdminGroupApplicationPermissionsDao" ref="bankAdminGroupApplicationPermissionsDao" />
+	</bean>
+	<bean id="bulkSmsGroupService"
+	class="com.moadbus.emconsole.services.impl.BulkSmsGroupServiceImpl">
+		<property name="bulkSmsGroupDao" ref="bulkSmsGroupDao" />
+	</bean>
+	<bean id="smsMobileService"
+	class="com.moadbus.emconsole.services.impl.SmsMobileServiceImpl">
+		<property name="smsMobileDao" ref="smsMobileDao" />
+	</bean>
+	<bean id="bulkUploaderService"
+	class="com.moadbus.emconsole.services.impl.BulkUploaderServiceImpl">
+		<property name="smsMobileService" ref="smsMobileService" />
+		<property name="errorLogService" ref="errorLogService" />
+	</bean>
+	<bean id="errorLogService"
+	class="com.moadbus.emconsole.services.impl.ErrorLogServiceImpl">
+		<property name="errorLogDao" ref="errorLogDao" />
+	</bean>
+</beans>
